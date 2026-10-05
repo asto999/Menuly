@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menuly — scan the menu, send the order</title>
+<meta name="description" content="Menuly turns the QR code already on your tables into a full ordering system — guests browse, customize, and send orders straight to the kitchen, no waiter flag-down required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="scanmark" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      Menuly
+    </a>
+    <nav class="nav__links">
+      <a href="#demo">Try it</a>
+      <a href="#how">How it works</a>
+      <a href="#worth">What it's worth</a>
+      <a href="#contact" class="nav__cta">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__kicker">For restaurants, cafés &amp; cloud kitchens</p>
+      <h1 class="hero__title">They already scan the code for your menu.</h1>
+      <p class="hero__title-line2">Let them order from it too.</p>
+      <p class="hero__sub">
+        Menuly turns the QR code already sitting on every table into a full ordering system —
+        guests browse, customize, and send the order straight to your kitchen, without
+        flagging anyone down.
+      </p>
+      <div class="hero__actions">
+        <a href="#demo" class="btn btn--primary">Try the live demo</a>
+        <a href="#contact" class="btn btn--ghost">Book a 20-minute call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="demo__inner">
+      <div class="demo__intro">
+        <h2>This is the actual flow — try it</h2>
+        <p>Order something on the left, as a guest would. Watch it land on the kitchen screen on the right, in real time.</p>
+      </div>
+
+      <div class="devices">
+
+        <div class="device device--guest">
+          <div class="device__bar">
+            <span class="device__dot" aria-hidden="true"></span>
+            Guest's phone
+            <span class="device__table">Table <span id="tableNum">7</span></span>
+          </div>
+
+          <div class="device__body">
+            <div class="menu" id="menuList">
+
+              <p class="menu__category">Starters</p>
+              <div class="menu__item" data-id="paneer-tikka" data-name="Paneer Tikka" data-price="220">
+                <div class="menu__info">
+                  <span class="menu__name">Paneer Tikka</span>
+                  <span class="menu__price">₹220</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Paneer Tikka">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Paneer Tikka">+</button>
+                </div>
+              </div>
+              <div class="menu__item" data-id="spring-rolls" data-name="Veg Spring Rolls" data-price="180">
+                <div class="menu__info">
+                  <span class="menu__name">Veg Spring Rolls</span>
+                  <span class="menu__price">₹180</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Veg Spring Rolls">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Veg Spring Rolls">+</button>
+                </div>
+              </div>
+
+              <p class="menu__category">Mains</p>
+              <div class="menu__item" data-id="butter-chicken" data-name="Butter Chicken" data-price="320">
+                <div class="menu__info">
+                  <span class="menu__name">Butter Chicken</span>
+                  <span class="menu__price">₹320</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Butter Chicken">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Butter Chicken">+</button>
+                </div>
+              </div>
+              <div class="menu__item" data-id="paneer-masala" data-name="Paneer Butter Masala" data-price="280">
+                <div class="menu__info">
+                  <span class="menu__name">Paneer Butter Masala</span>
+                  <span class="menu__price">₹280</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Paneer Butter Masala">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Paneer Butter Masala">+</button>
+                </div>
+              </div>
+              <div class="menu__item" data-id="veg-biryani" data-name="Veg Biryani" data-price="260">
+                <div class="menu__info">
+                  <span class="menu__name">Veg Biryani</span>
+                  <span class="menu__price">₹260</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Veg Biryani">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Veg Biryani">+</button>
+                </div>
+              </div>
+
+              <p class="menu__category">Drinks &amp; Desserts</p>
+              <div class="menu__item" data-id="gulab-jamun" data-name="Gulab Jamun" data-price="90">
+                <div class="menu__info">
+                  <span class="menu__name">Gulab Jamun</span>
+                  <span class="menu__price">₹90</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Gulab Jamun">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Gulab Jamun">+</button>
+                </div>
+              </div>
+              <div class="menu__item" data-id="masala-chai" data-name="Masala Chai" data-price="60">
+                <div class="menu__info">
+                  <span class="menu__name">Masala Chai</span>
+                  <span class="menu__price">₹60</span>
+                </div>
+                <div class="menu__qty">
+                  <button type="button" class="qty__btn" data-action="dec" aria-label="Remove one Masala Chai">−</button>
+                  <span class="qty__val">0</span>
+                  <button type="button" class="qty__btn" data-action="inc" aria-label="Add one Masala Chai">+</button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="upsell" id="upsellNudge" hidden>
+              <p>Tables usually add a Gulab Jamun with that.</p>
+              <button type="button" id="upsellAddBtn">Add — ₹90</button>
+              <button type="button" id="upsellDismiss" aria-label="Dismiss suggestion">✕</button>
+            </div>
+
+            <div class="cart">
+              <span id="cartSummary">0 items · ₹0</span>
+              <button type="button" id="sendOrderBtn" disabled>Send to kitchen</button>
+            </div>
+            <p class="toast" id="orderToast" hidden>Sent to kitchen ✓</p>
+          </div>
+        </div>
+
+        <div class="device device--kitchen">
+          <div class="device__bar device__bar--kitchen">
+            <span class="device__dot device__dot--kitchen" aria-hidden="true"></span>
+            Kitchen screen
+          </div>
+          <div class="device__body device__body--kitchen">
+            <div class="kitchen__controls">
+              <button type="button" id="toggle86Btn">Mark Butter Chicken sold out</button>
+            </div>
+            <div class="kitchen__queue" id="ticketQueue">
+              <p class="kitchen__empty" id="kitchenEmpty">No orders yet — waiting…</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="pains">
+    <div class="pains__inner">
+      <h2>What's probably happening right now</h2>
+      <ul class="pains__list">
+        <li>A table scans the code, reads the menu, then spends five minutes waving someone down just to place the order.</li>
+        <li>At peak hours, orders get relayed from memory or shouted across the kitchen — and mistakes follow.</li>
+        <li>A guest who wanted a drink or dessert doesn't bother, because it means flagging someone down all over again.</li>
+        <li>By the time an order reaches the kitchen, the table's patience — and the upsell — is already gone.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="solution__inner">
+      <h2>What Menuly actually does</h2>
+      <div class="solution__grid">
+        <div class="feature">
+          <span class="feature__tag">ITM-01</span>
+          <svg class="feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="8" y="8" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <rect x="28" y="8" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <rect x="8" y="28" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <path d="M30 30h4v4h-4zM36 30h4v4h-4zM30 36h4v4h-4zM36 36h4v4h-4z" fill="currentColor"/>
+          </svg>
+          <h3>One scan, start to finish</h3>
+          <p>The same QR code already on the table takes guests straight into a live menu they can browse and order from — no app to download, no account to create.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__tag">ITM-02</span>
+          <svg class="feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M12 8h18l6 6v26a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 20h12M16 26h12M16 32h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>Orders land in the kitchen instantly</h3>
+          <p>The moment a guest taps send, a ticket appears on the kitchen screen with the table number, items, and notes — no relay, no mishearing.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__tag">ITM-03</span>
+          <svg class="feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M10 18a14 14 0 0 1 24-8.5M38 30a14 14 0 0 1-24 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 10v8h8M38 38v-8h-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>The menu updates itself</h3>
+          <p>Sold out of something at 9pm? Mark it from the kitchen screen and it disappears from every table's menu immediately — no more promising dishes that don't exist.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__tag">ITM-04</span>
+          <svg class="feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 17v14M17 24h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>Easy upsells, no awkward ask</h3>
+          <p>A dessert or drink suggestion appears right when they're deciding, instead of relying on a server to remember to mention it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="how__inner">
+      <h2>How it actually gets built</h2>
+      <ol class="how__steps">
+        <li>
+          <span class="how__num">1</span>
+          <div>
+            <h3>Send over your menu</h3>
+            <p>Categories, items, prices, photos if you have them — whatever you already give guests today.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how__num">2</span>
+          <div>
+            <h3>We set it up on your existing codes</h3>
+            <p>No new QR codes to print — Menuly points your current ones at the live menu instead of a PDF.</p>
+          </div>
+        </li>
+        <li>
+          <span class="how__num">3</span>
+          <div>
+            <h3>It goes live</h3>
+            <p>Usually about a week, start to finish — and the menu stays editable by you from then on.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="roi" id="worth">
+    <div class="roi__inner">
+      <div class="roi__intro">
+        <h2>What this is worth to you</h2>
+        <p>A rough number, not a sales pitch. Adjust it to fit your restaurant.</p>
+      </div>
+
+      <div class="roi__panel">
+        <div class="roi__inputs">
+          <label>
+            Tables you serve in a typical day
+            <input type="number" id="roiTables" value="60" min="0" step="5">
+          </label>
+          <label>
+            Minutes saved per table by skipping the wait to order
+            <input type="number" id="roiMinutes" value="5" min="0" step="1">
+          </label>
+          <label>
+            Average spend per table (₹)
+            <input type="number" id="roiSpend" value="450" min="0" step="50">
+          </label>
+        </div>
+
+        <div class="roi__output">
+          <div class="roi__stat">
+            <span class="roi__num" id="roiTurns">0</span>
+            <span class="roi__label">extra table-turns unlocked, per day</span>
+          </div>
+          <div class="roi__stat">
+            <span class="roi__num" id="roiMoney">₹0</span>
+            <span class="roi__label">extra revenue, per month</span>
+          </div>
+          <p class="roi__note">Rough rule of thumb: every 30 minutes of ordering-friction time freed across your tables is worth about one more table-turn. Your actual number depends on how fast your kitchen already moves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why__inner">
+      <h2>Built around your menu, not a generic app</h2>
+      <ul class="why__list">
+        <li>Works with the QR codes you've already printed — no new codes, no new hardware</li>
+        <li>No app download for guests — opens straight in their phone's browser</li>
+        <li>Menu changes — price, availability, new items — update everywhere instantly, from one place</li>
+        <li>Live in about a week, tuned to your actual menu and categories</li>
+        <li>You talk directly to the person building it — no account managers, no handoffs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <div class="contact__intro">
+        <h2>Tell me about your restaurant</h2>
+        <p>A few lines is enough. I'll reply from here — rajputashutosh999@gmail.com — usually within a day.</p>
+      </div>
+
+      <form class="contact__form" id="contactForm">
+        <div class="field">
+          <label for="cName">Your name</label>
+          <input type="text" id="cName" name="name" required>
+        </div>
+        <div class="field">
+          <label for="cBusiness">Restaurant name</label>
+          <input type="text" id="cBusiness" name="business" required>
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" name="email" required>
+        </div>
+        <div class="field">
+          <label for="cMessage">What's slow at peak hours right now?</label>
+          <textarea id="cMessage" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send it over</button>
+        <p class="contact__confirm" id="contactConfirm" hidden></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="scanmark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      Menuly
+    </div>
+    <p>Built by Ashutosh Barwal — <a href="https://asto999.github.io/" target="_blank" rel="noopener">portfolio</a> · <a href="mailto:rajputashutosh999@gmail.com">rajputashutosh999@gmail.com</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
